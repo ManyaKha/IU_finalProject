@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>HGC Courses</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8">
+	<!-- Here we are importing the css style to the page -->
+	<link rel="stylesheet" href="./style/style.css">
+	<link id="content-style" rel="stylesheet" href="./style/style-content-blog.css"> <!-- This style sheet is used for styling the content of the page.-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="./libs/table2excel/src/jquery.table2excel.js"></script>
+	<script src="./script/userManager.js"></script>
+	<script src="./script/forumManager.js"></script>
+	<script src="script/contentManager.js"></script>
+</head>
+<body>
+	<header class = "col-12 col-t-12">
+		<div class = "header-content">
+			<div class = "left">
+				<div class = "dropdown">
+					<svg id="hamburger" width = "60" height="60" viewbox="1 1 30 30" aria-hidden="true">
+						<path d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"/>
+					</svg>
+					<div class="dropdown-content"> <!-- this is the class for the links in the page, each link will send you to their respective pages, changing the main part of the page, the middle section -->
+						<a class="courseButton" href="javascript:changeContent(courses)"><strong>My courses</strong></a>
+						<a href="javascript:changeContent(forum)"><strong>Forum</strong></a>
+						<a href="javascript:changeContent(grades)"><strong>Grades</strong></a>
+						<a href="javascript:changeContent(news)"><strong>Last News</strong></a>
+						<a class="open" href="javascript:changeContent(events)"><strong>Next Events</strong></a>
+					</div>
+				</div>
+				<!-- this part is dedicated to the "header" part, where we have the main title, the photo icon and the menu in the right part of the page -->
+				<img alt="Logo" id="logo" src="./images/440712.jpg" width="60" height="60">
+				<a href="javascript:changeContent(blog)"><h1 id = "title">HGC Courses</h1></a>
+			</div>
+
+			<div id="userHeader">
+				<h2 id="loggedName">Username</h2>
+				<div class="image-cropper">
+					<img id ="loggedImg" src="./images/profilepicture.png"  alt="Profile Picture"/>
+				</div>
+				<div class="dropdown-content2"> <!-- this is the class for the links in the page, each link will send you to their respective pages, changing the main part of the page, the middle section -->
+					<a href="javascript:logOut()"><strong>Log out</strong></a>
+				</div>
+			</div>
+			<ul id="button">
+				<li><a href="javascript:changeContent(blog)">Home</a></li>
+				<li  class="timeline-link"><a href="javascript:changeContent(news)">News</a></li>
+				<li><a href="javascript:changeContent(aboutUs)">About Us</a></li>
+			</ul>
+		</div>
+
+	</header>
+	<main>
+		<nav class="col-2 col-t-2">
+			<h1>Course</h1>
+			<ul> <!--main headers of the page, each button will lead to their respective link-->
+				<li><a class="courseButton" href="javascript:changeContent(courses)">My courses</a></li>
+				<li><a href="javascript:changeContent(forum)">Forum</a></li>
+				<li><a href="javascript:changeContent(grades)">Grades</a></li>
+				<li class="timeline-link"><a href="javascript:changeContent(news)">Last News</a></li>
+				<li class="timeline-link open"><a href="javascript:changeContent(events)">Next Events</a></li>
+			</ul>
+		</nav>
+		<section class="col-10 col-t-10" id="content">
+			<!-- This section will be changed with the content of the page. -->
+		</section>
+		<aside class="col-3 col-t-3">
+			<div class="timeline"><!-- this is the third container of the page, where we have the last news and the next events -->
+				<h1> Last News</h1>
+				<p>24/04/2020 - CSS post published</p>
+				<p>20/01/2020 - JavaScript post published</p>
+				<p>18/09/2019 - Added HTML article</p>
+				<!--content show when the pop-up is not display-->
+				<h1 class="open">Next Events</h1>
+				<p>04/11/2020 - First HTML/CSS Exam</p>
+				<p>30/11/2020 - Create your own netflix - Assigment due date.</p>
+				<p>15/11/2020 - Course Presentation</p>
+				<p>6/12/2020 - Final exam User interface</p>
+			</div>
+		</aside>
+		<div class= "popup-overlay"> <!--this is the popup content, when the popup is active-->
+			<div class="popup-content">
+				<div class="container col-6 col-t-9"></div>
+				<div class="card">
+					<h3 class="card-header" id="monthAndYear">Date</h3>
+					<table class="table" style="width:100%" id="calendar"><!--we will be creating a table having as the main title the actual month and year we are-->
+						<thead>
+						<tr> <!-- the week days will represent the main columns of the table-->
+							<th>Sun</th>
+							<th>Mon</th>
+							<th>Tue</th>
+							<th>Wed</th>
+							<th>Thu</th>
+							<th>Fri</th>
+							<th>Sat</th>
+						</tr>
+						</thead>
+						<!-- this is the calendar body that we will be developing in the calendar.js script, this table will change depending on the month and in the year-->
+						<tbody id="calendar-body">
+
+						</tbody>
+					</table>
+					<br/>
+					<form class="form-inline"><!-- here we have the options to jump to another month of the year or to another complete year-->
+						<label class="lead mr-2 ml-2" for="month">Jump To: </label>
+						<select class="form-control col-sm-6" name="month" id="month" onchange="jump()"><!-- choose the month the user want-->
+							<option value=0>Jan</option>
+							<option value=1>Feb</option>
+							<option value=2>Mar</option>
+							<option value=3>Apr</option>
+							<option value=4>May</option>
+							<option value=5>Jun</option>
+							<option value=6>Jul</option>
+							<option value=7>Aug</option>
+							<option value=8>Sep</option>
+							<option value=9>Oct</option>
+							<option value=10>Nov</option>
+							<option value=11>Dec</option>
+						</select>
+
+						<!-- choose the year the user want-->
+						<label for="year"></label><select class="form-control col-sm-4" name="year" id="year" onchange="jump()">
+							<option value=2010>2010</option>
+							<option value=2011>2011</option>
+							<option value=2012>2012</option>
+							<option value=2013>2013</option>
+							<option value=2014>2014</option>
+							<option value=2015>2015</option>
+							<option value=2016>2016</option>
+							<option value=2017>2017</option>
+							<option value=2018>2018</option>
+							<option value=2019>2019</option>
+							<option value=2020>2020</option>
+							<option value=2021>2021</option>
+							<option value=2022>2022</option>
+							<option value=2023>2023</option>
+							<option value=2024>2024</option>
+							<option value=2025>2025</option>
+							<option value=2026>2026</option>
+							<option value=2027>2027</option>
+							<option value=2028>2028</option>
+							<option value=2029>2029</option>
+							<option value=2030>2030</option>
+						</select></form>
+				</div>
+				<button class="close">Close</button> <!--close button to close the popup content-->
+			</div>
+		</div>
+	</main>
+	<footer class="col-12 col-t-12"> <!-- footer of the page --> <!-- in this part we have two different links that goes to their respective section, the first part, the copyright has a specific page and then the privacy part the same -->
+		<a href="javascript:changeContent(copyright)">Copyright Notice</a><div></div><a href="javascript:changeContent(privacy)">Privacy Policy</a><div></div><a href="javascript:changeContent(aboutUs)">About Us</a>
+	  </footer>
+	  <!--<button name="jump" onclick="jump()">Go</button>-->
+	<script src="./script/calendar.js"></script>
+</body>
+</html>

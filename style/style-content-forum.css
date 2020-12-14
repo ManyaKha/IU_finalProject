@@ -1,0 +1,121 @@
+/* This document is in charge of styling the forum inside the forum page. */
+
+h1{
+	font-family: Arial, Helvetica, sans-serif;
+	color: #2d2a32;
+}
+p{
+	color: #2d2a32;
+}
+
+/* The forum is represented by a table.*/
+#forum table {
+	width: 100%;
+	font-family: Arial, Helvetica, sans-serif;
+	border-collapse: collapse;
+	background-color: var(--light_light_purple);
+	text-align: left;
+	color: var(--dark_blue);
+	font-weight: normal;
+}
+#forum th {
+	text-align: center;
+	background-color: var(--dark_blue);
+	color: var(--light_light_purple);
+	padding: 5px;
+}
+
+#forum td {
+	padding: 10px;
+	width: min-content;
+}
+#forum tr {
+	border-bottom: 1px solid var(--light_purple);
+}
+#send {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 24px;
+	background-color: var(--light_purple);
+	border-radius: var(--border_radius);
+	color:var(--dark_blue);
+	width: 100%;
+	padding: 5px 5px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	margin-bottom: 40px;
+}
+#send:hover, #send a:active{
+	background-color: var(--light_light_purple);
+	font-weight: bold;
+}
+.message .loggedImg,.message .userInfo, .message .image-cropper{
+	text-align: center;
+	align-content: center;
+	float: none;
+}
+.message .image-cropper{
+	margin-left: auto;
+	margin-right: auto;
+}
+.message h2{
+	padding-top:3px;
+	font-size: 18px;
+}
+.message h3{
+	font-size: 15px;
+}
+.message .id {
+	width: 30%;
+	border-right: 0;
+	text-align: left;
+	font-weight: lighter;
+	font-size: 15px;
+}
+.message .timestamp{
+	border-left: 0;
+	text-align: right;
+	font-weight: lighter;
+	font-size: 15px;
+}
+#newMessage {
+	resize:none;
+	border: 1px solid #2d2a32;
+	width: 100%;
+}
+.messageContent {
+	vertical-align: top;
+	font-weight: normal;
+}
+.message {
+	padding-bottom: 10px;
+}
+.forum-icon{
+	width: 80px;
+}
+.messages{
+	text-align: center;
+	width: 15%;
+}
+.topic{
+	cursor: pointer;
+}
+.date{
+	text-align: center;
+	width: 20%;
+}
+/* When we hover over a forum topic, it will be highlighted. */
+.topic:hover{
+	background-color: var(--light_purple);
+}
+.icon {
+	fill: var(--dark_blue)
+}
+#content{
+padding: 20px;
+}
+#content-title {
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+	padding-bottom: 20px;
+}

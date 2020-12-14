@@ -1,0 +1,78 @@
+/* This style sheet is used for styling simple page content used for News, Events, Copyright, Privacy and about us pages. */
+
+p{
+	padding-left: 10px;
+	font-weight:normal;
+	font-family: Arial, Helvetica, sans-serif;
+	padding-bottom: 15px;
+}
+form p{
+	padding-left: 0px;
+	padding-bottom: 3px;
+	padding-top: 7px;
+}
+h1, h2 {
+	padding-bottom: 20px;
+	font-weight:bold;
+	font-size: 24px;
+
+}
+h2{
+	font-size: 20px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+#content{
+	padding: 50px;
+}
+form{
+	padding: 10px;
+
+}
+
+.authButton{
+	position:relative;
+	display: inline-block;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	border-radius: var(--border_radius);
+	background: var(--light_purple);
+	width: 20%;
+	color: var(--dark_blue);
+	padding: 10px 5px;
+	margin-top: 10px;
+	margin-right: 10px;
+	text-align: center;
+}
+.authButton:hover{
+	background-color: var(--light_light_purple);
+	font-weight: bold;
+}
+/* Design for invalid fields */
+input.invalid{
+	border-color: #900;
+	background-color: #FDD;
+}
+
+input:focus.invalid {
+	outline: none;
+}
+
+/* Design for error messages */
+.error {
+	width : 100%;
+	padding: 0;
+
+	font-size: 80%;
+	color: white;
+	background-color: #900;
+	border-radius: 0 0 5px 5px;
+	box-sizing: border-box;
+}
+
+.error.active {
+	padding: 0.3em;
+}
+#content {
+	padding-bottom: 40px;
+	padding-right: 40px;
+}

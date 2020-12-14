@@ -1,0 +1,61 @@
+/* This style sheet styles the content of the students page. */
+h1{
+	font-family: Arial, Helvetica, sans-serif;
+	color: #2d2a32;
+}
+p{
+	font-family: Arial, Helvetica, sans-serif;
+	color: #2d2a32;
+}
+h2{
+	font-family: Arial, Helvetica, sans-serif;
+	padding-top: 10px;
+	padding-bottom: 7px;
+}
+
+#content{
+padding: 20px;
+}
+#content-title {
+	font-weight:bold;
+	font-family: Arial, Helvetica, sans-serif;
+	padding-bottom: 20px;
+}
+
+/* Styling student cards */
+.student {
+	overflow: auto;
+	padding-left: 10px;
+	padding-right: 20px;
+	background-color: #EEEFA8;
+}
+.student-container{
+	padding-bottom: 20px;
+}
+.student-info{
+	padding: 5px 5px 5px 120px;
+}
+.student-info h1{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	padding-bottom: 5px;	
+}
+.student-info p{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	padding-bottom: 5px;	
+}
+.student-img {
+	padding: 5px;
+	float: left;
+}
+.student svg{
+	width: 40px;
+	height: 40px;
+	float: right;
+	cursor: pointer;
+	fill: #2d2a32;
+}
+.student svg:hover{
+	fill: #EAE151;
+}

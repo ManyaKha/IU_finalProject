@@ -1,0 +1,91 @@
+/* This page is used for styling blog content with banners and videos.*/
+
+article{
+	padding: 5px;
+}
+/* Article banner is hidden on phones and tablets */
+.articleBanner{
+	display: none;
+	float:left;
+	padding: 30px
+}
+
+article h1{
+	
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 40px;
+	padding-left: 10px;
+}
+/* On phones, the paragraph aren't shown. */
+article p{
+	display: none;
+	padding-top: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	text-align: justify;
+}
+.intro-p{
+	padding-top: 30px;
+	padding-bottom: 40px;
+}
+.video-container{
+	min-height: 260px;
+	padding-top: 50px;
+}
+.video-container iframe{
+	width: 100%;
+	padding-top: 15px;
+	padding-bottom: 20px;
+}
+.video-container h2{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 30px;
+}
+.video-container p{
+	padding-top: 20px;
+}
+/* The video title used in desktop browsers is hidden by default. */
+.video-title-desktop {
+	display: none;
+}
+
+@media only screen and (min-width: 600px) {
+    article {
+		padding: 50px;
+	}
+	article p {
+		display: block;
+	}
+}
+
+@media only screen and (min-width: 769px) {
+    .articleBanner{
+		display: block;
+	}
+	.video-container{
+		display:block;
+		min-height: 260px;
+		padding-top: 50px;
+	}
+	.video-container iframe{
+		float: left;
+		max-width: 420px;
+		width:60%;
+		min-height: 236px;
+		padding-right: 20px;
+	}
+	.video-container h2{
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 30px;
+	}
+	.video-container p{
+		padding-top: 20px;
+	}
+	/*Show video title for desktop and hide video title for phones/tablets */
+    .video-title-desktop{
+		display: block;
+	}
+	.video-title-reduced{
+		display: none;
+	}
+}

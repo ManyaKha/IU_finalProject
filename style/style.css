@@ -1,0 +1,497 @@
+/*This CSS documents is used for styling all web page contents that are visible in all HTML files*/
+:root{
+	--gray: #6d7278;
+	--dark_blue: #191970;
+	--light_purple: #e6e6fa;
+	--light_light_purple: #f5f5ff;
+	--border_radius: 5px;
+	--header-height: 70px;
+
+}
+* {
+	padding:0;
+	margin:0;
+	border:0;
+	box-sizing: border-box;
+}
+
+/* This properties styles the header of the page. */
+header{
+	position: fixed;
+	background-color: white;
+	height: var(--header-height);
+	vertical-align: center;
+	z-index: 1;
+	box-shadow: 0 1px 15px rgba(0, 0, 0,0.2);
+
+}
+h1{
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	color: var(--gray);
+}
+.header-content{
+	margin: 0;
+	position: absolute;
+	width: 100%;
+	top: 50%;
+	-ms-transform: translateY(-50%);
+	right: 0;
+	transform: translateY(-50%);
+}
+
+#userHeader{
+	background-color: var(--light_purple);
+	border-radius: var(--border_radius);
+	/*padding-top: 4px;
+	padding-left: 10px;
+	padding-right: 4px;*/
+	margin-top: 9px;
+	margin-right: 10px;
+	float: right;
+}
+#userHeader:hover h2{
+	font-weight: bold;
+}
+#userHeader h2{
+	display: none;
+	font-weight: normal;
+	font-size: 18px;
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 9px 10px 9px 15px;
+	color: var(--dark_blue);
+}
+#userHeader:hover .image-cropper {
+	box-shadow: 0 0 7px rgba(255, 255, 255, 0.6);
+}
+/*this class (dropdown-content2, will appear in the right up side of the screen in case the user wants to log out and closed the session*/
+.dropdown-content2 {
+	display: none;
+	position: absolute;
+	background-color: var(--light_light_purple);
+	right: 10px;
+	top: 50px;
+	min-width: 150px;
+	border-radius: var(--border_radius);
+	box-shadow: 0 0px 4px 0 rgba(0,0,0,0.5);
+}
+.dropdown-content2 a {
+	font-family: Arial, Helvetica, sans-serif;
+	color: var(--dark_blue);
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+.dropdown-content2 a:hover {
+	background-color: var(--light_purple);
+	border-radius: var(--border_radius);
+	color: var(--dark_blue);
+}
+#userHeader:hover .dropdown-content2 {
+	display: block;
+}
+
+.image-cropper {
+	width: 41px;
+	height: 41px;
+	overflow: hidden;
+	border-radius: var(--border_radius);
+	float: right;
+
+}
+.image-cropper img {
+	margin: 0 auto;
+	height: 100%;
+	width: auto;
+}
+
+#title{
+	float: left;
+	font-weight:bold;
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 10px;
+	color: var(--dark_blue);
+}
+#logo{
+	display: none;
+	float: left;
+	padding: 5px;
+}
+/* Styling the header navigation menu. */
+#button {
+	display:none;
+	padding-top: 9px;
+	float: right;
+}
+#button li {
+	display: inline;
+}
+#button li a {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	background-color: var(--light_purple);
+	border-radius: var(--border_radius);
+	text-align: center;
+	text-decoration: none;
+	float: left;
+	padding: 10px 0;
+	width: 110px;
+	margin-right: 10px;
+	color: var(--dark_blue);
+}
+
+#button li a:hover{
+	color: var(--dark_blue);
+	background-color: var(--light_light_purple);
+	font-weight: bold;
+}
+
+
+body{
+	background-color: white;
+}
+
+/* Style of the left navigation menu. */
+nav{
+	top:var(--header-height);
+	position: fixed;
+	display: none;
+	background-color: white;
+	/*height: 89.8vh;*/
+	height:100%;
+}
+nav ul{
+	background-color: var(--light_light_purple);
+	border-radius: var(--border_radius);
+	width: 75%;
+	margin-left: 12.5%;
+}
+nav li{
+	list-style-type: none;
+}
+nav h1{
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 24px;
+	padding: 15px;
+	color:  #2d2a32;
+}
+
+/* Style of the buttons shown in hte left navigation menu.*/
+nav li a:link, nav li a:visited{
+	border-radius: var(--border_radius);
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-weight: normal;
+	width: 100%;
+	background-color: var(--light_light_purple);
+	color:var(--dark_blue);
+	padding: 10px 0;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+
+}
+nav li a:hover, nav li a:active{
+	background-color: var(--light_purple);
+	font-weight: bold;
+}
+
+.popup-overlay {
+	/*Hides pop-up when there is no "active" class*/
+	visibility: hidden;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	position: fixed;
+	text-align: center;
+	background: #eeefa8;   
+	border: 3px solid #2d2a32;
+	width: 100%;
+	top:25%;
+	right: 0;
+}
+.popup-overlay.active {
+	/*displays pop-up when "active" class is present*/
+	visibility: visible;
+}
+
+.popup-content {
+	/*Hides pop-up content when there is no "active" class */
+	visibility: hidden;
+	font-family: Arial, Helvetica, sans-serif;
+	width: 100%;
+	height: 50%;
+}
+
+.popup-content.active {
+	/*Shows pop-up content when "active" class is present */
+	visibility: visible;
+}
+
+button { /*button to show the popup*/
+	position:relative;
+	left:30px;
+	display: inline-block;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 24px;
+	background: var(--light_light_purple);
+	width: 80%;
+	color: var(--dark_blue);
+	padding: 5px 5px;
+	text-align: center;
+}
+
+.Input{
+	padding: 5px;
+	font-family: Arial, Helvetica, sans-serif;
+	width: 70%;
+	border:1px solid #2d2a32;
+	background-color: white;
+	color: black;
+}
+
+select{
+	padding: 5px;
+	width:70%;
+	background-color: white;
+	border:1px solid #2d2a32;
+}
+.close {
+	margin-top:5px;
+	margin-bottom:5px;
+}
+button{
+	position:relative;
+	left:0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	background: var(--light_light_purple);
+	width: 20%;
+	color: var(--dark_blue);
+	padding: 5px 5px;
+	text-align: center;
+	display: inline-block;
+}
+
+button:hover {
+	background-color: var(--light_purple);
+	font-weight: bold;
+}
+
+#calendar{
+	font-family: Arial, Helvetica, sans-serif;
+	width: 100%;
+	height: 80%;
+}
+#calendar td:hover{
+    background-color: #f5f5f5;
+}
+.popup-content table {
+	border: 0;
+}
+
+.popup-content th {
+	background-color: #DDD92A;
+	color: #2d2a32;
+}
+
+.popup-content table th, .popup-content table td{
+	font-family: Arial, Helvetica, sans-serif;
+	border-collapse: collapse;
+	padding: 6px;
+}
+#content{
+	background-color: white;
+}
+main{
+	height: 100%;
+}
+/* Styling the right menu that shows the Events and News timelines. */
+aside{
+	position: fixed;
+	top:var(--header-height);
+	right: 0;
+	display: none;
+	background-color: #eeefa8;
+	/*height: 89.8vh;*/
+	height:100%;
+	min-height: 100%;
+}
+.timeline{	
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 15px;
+	color:  #2d2a32;
+}
+.timeline h1{
+	font-weight: bold;
+	font-size: 24px;
+	padding-bottom: 10px;
+	padding-top: 10px
+}
+
+.open:hover{
+	cursor: pointer;
+	color:  #ddd92a;
+}
+
+.timeline p{
+	font-size: 18px;
+	padding-bottom: 5px;
+	padding-left: 30px;
+}
+
+/* Dropdown menu is made using CSS and the hover option. */
+.dropdown-content {
+	display: none;
+	position: absolute;
+	border-radius: var(--border_radius);
+	background-color: var(--light_light_purple);
+	min-width: 160px;
+	top:55px;
+	box-shadow: 0 0 8px 0 rgba(0,0,0,0.5);
+	z-index: 1;
+}
+.dropdown-content a {
+	font-family: Arial, Helvetica, sans-serif;
+	border-radius: var(--border_radius);
+	color: var(--dark_blue);
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+.dropdown-content a:hover {
+	background-color: var(--light_purple);
+	border-radius: var(--border_radius);
+	color: var(--dark_blue);
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+#hamburger{
+	float: left;
+	fill: var(--dark_blue);
+	padding: 5px;
+	cursor: pointer;
+}
+#hamburger:hover{
+	fill: var(--light_purple);
+}
+
+/* Styling page footer */
+footer{
+	position: fixed;
+	bottom: 0;
+	background-color: var(--light_light_purple);
+	text-align: center;
+	padding: 10px;
+	box-shadow: 0 -1px 15px rgba(0, 0, 0,0.2);
+}
+footer div{
+	border-left: 2px solid var(--light_purple);
+	display: inline;
+}
+footer a{
+	font-family: Arial, Helvetica, sans-serif;
+	color: var(--dark_blue);
+	text-decoration: none;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+footer a:hover{
+	font-weight: bold;
+}
+
+[class*="col-"] {
+	float: left;
+	width:100%;
+}
+section {
+	margin-top:var(--header-height);
+}
+section::after {
+content: "";
+clear: both;
+display: table;
+}
+
+@media only screen and (min-width: 600px) {
+/*TABLET*/
+.col-t-1{
+  width: 8.33%;
+}
+.col-t-2{
+  width: 16.66%;
+}
+.col-t-3 {width: 25%;}
+.col-t-4 {width: 33.33%;}
+.col-t-5 {width: 41.66%;}
+.col-t-6 {width: 50%;}
+.col-t-7 {width: 58.33%;}
+.col-t-8 {width: 66.66%;}
+.col-t-9 {width: 75%;}
+.col-t-10 {width: 83.33%;}
+.col-t-11 {width: 91.66%;}
+.col-t-12 {width: 100%;}
+aside{
+	display: none;
+}
+  #userHeader h2{
+	  display: inline-block;
+  }
+.dropdown{
+	display: none;
+}
+
+.popup-overlay {
+
+	font-size: 20px;
+	width: 75%;
+	left: 25%;
+
+}
+
+#logo{
+	display:block;
+}
+section{
+	margin-left: 16.66%;
+}
+nav{
+	display:block;
+}
+}
+
+
+@media only screen and (min-width: 769px) {
+	/*FOR DESKTOP*/
+	.col-1{
+	  width: 8.33%;
+	}
+	.col-2{
+	  width: 16.66%;
+	}
+	.col-3 {width: 25%;}
+	.col-4 {width: 33.33%;}
+	.col-5 {width: 41.66%;}
+	.col-6 {width: 50%;}
+	.col-7 {width: 58.33%;}
+	.col-8 {width: 66.66%;}
+	.col-9 {width: 75%;}
+	.col-10 {width: 83.33%;}
+	.col-11 {width: 91.66%;}
+	.col-12 {width: 100%;}
+	#button{
+		display:block;
+	}
+	.popup-overlay {
+		font-size: 21px;
+		width: 50%;
+		left: 25%;
+	}
+	aside{
+		display: none;
+	}
+	.timeline-link{
+		display: none;
+	}
+
+}
