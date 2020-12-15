@@ -23,12 +23,14 @@ header{
 	vertical-align: center;
 	z-index: 1;
 	box-shadow: 0 1px 15px rgba(0, 0, 0,0.2);
-
 }
-h1{
+h1,h2{
 	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 	color: var(--gray);
 }
+
+
+
 .header-content{
 	margin: 0;
 	position: absolute;
@@ -42,9 +44,6 @@ h1{
 #userHeader{
 	background-color: var(--light_purple);
 	border-radius: var(--border_radius);
-	/*padding-top: 4px;
-	padding-left: 10px;
-	padding-right: 4px;*/
 	margin-top: 9px;
 	margin-right: 10px;
 	float: right;

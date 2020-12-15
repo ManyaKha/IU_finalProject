@@ -11,7 +11,7 @@ var loginPage = {get html() {return `
     <input name="password" type="password" class="Input" value=""/>
     <br>
     <br>
-    <input value="Login" target="_parent" onclick="loginUser()" type="button" class="authButton"/>
+    <input value="Login" onclick="loginUser()" type="button" class="authButton"/>
     <input type="button" value="Sign-up" onclick="changeContent(registerPage)" class="authButton"/>
 </form>`}, style :"./style/style-content-login.css", title:"Log-In"};
 var registerPage = {get html() {
@@ -58,7 +58,7 @@ var registerPage = {get html() {
     </select><br>
     <input name="accepted" type="checkbox" required/><label>I have read and accept the Terms of Use</label><br>
  
-    <input value="Save" target="_parent" onclick="registerUser()" type="submit" class="authButton"/>
+    <input value="Save" onclick="registerUser()" type="submit" class="authButton"/>
     <input type="reset" value="Delete" onclick="void()" class="authButton"/>
 </form>`}, style :"./style/style-content-login.css", title:"Log-In"};
 var blog = {get html() {return `<!--Article 1 HTML-->
@@ -189,7 +189,7 @@ var privacy = {get html() {return `<!-- This is the main part of this page, wher
 `}, style:"./style/style-content.css", title:"Privacy Policy"};
 var aboutUs = {get html() {return ` <!-- This is the main part of the page, where we describe the section "about us" in the main part if the page, the middle section with its respective description about us -->
 <h1>About Us</h1>
-<p>This Web Page has been created by <b>Juan Carlos Cebrián Peñuela (100405916) </b>and <b>Pablo Mestre Quilez</b> (100383692)</p>
+<p>This Web Page has been created by <b>Juan Carlos Cebrián Peñuela (100405916)</b>, <b>Manya Khanna (100362610)</b>, <b>Pablo Mestre Quilez</b> (100383692) and <b>Bogdan Andrei Baltes (100406687)</b>,</p>
 `},style:"./style/style-content.css", title:"About us"};
 
 // This map is used for locating the page content given a page title.
