@@ -1,10 +1,4 @@
 let loggedUser = new User();
-const degrees = ["Degree in Computer Science","Degree in Industrial Design","Degree in Physics Engineering","Degree in Mechanical Engineering"];
-const degreeCourses = new Map();
-degreeCourses.set(0, ["User Interfaces","Calculus","Linear Algebra", "Programming"]);
-degreeCourses.set(1, ["Physics I","Physics II", "Calculus", "Linear Algebra"]);
-degreeCourses.set(2,["Principles of Phisycs","Calculus", "Advanced Phisycs", "Linear Algebra"]);
-degreeCourses.set(3, ["Physics I","Physics II", "Calculus", "Linear Algebra"]);
 //Object to store all the data for an specific user, in case the user is not register, the system will ask for all this values
 function User(username,nia,password,fullName,email,birthDate,id,role,degree,university,language,isExchange,picture,course1,course2,course3,course4){
     this.username=username;
@@ -270,15 +264,7 @@ function getStudentsPage (){
     pageContent+=`</div>`;
     return pageContent;
 }
-//the my courses button will show the list of the courses that the user is studing
-function getCoursesPage() {
-    return `<h1>My Courses</h1>
-            <h2>`+degrees[loggedUser.degree]+`</h2>
-            <p>`+degreeCourses.get(loggedUser.degree)[0]+`</p>
-            <p>`+degreeCourses.get(loggedUser.degree)[1]+`</p>
-            <p>`+degreeCourses.get(loggedUser.degree)[2]+`</p>
-            <p>`+degreeCourses.get(loggedUser.degree)[3]+`</p>`;
-}
+
 //the grades button will show a page containing a table with all the courses and the different marks that the student had score for different assignments
 function getGradesPage(){
     let pageContent = `<h1>Grades</h1>`;

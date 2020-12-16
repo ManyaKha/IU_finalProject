@@ -138,17 +138,17 @@ var blog = {get html() {return `<!--Article 1 HTML-->
 var forum = {get html() {return getTopicsPage()}, style : "./style/style-content-forum.css", title:"Forum"};
 
 var courses = {style : "./style/style-content-students.css", title:"Students", get html(){
-    if(loggedUser.username!==undefined){
-        if(loggedUser.role>0){
-            return getStudentsPage();
-        }else{
             return getCoursesPage();
-        }
-    }else{
-        return `<p>Please Log In.</p>`
-    }
-
     }};
+
+var course = {
+    style : "./style/style-content-students.css", title: "Course",
+    get html(){return "Empty Course"}
+};
+var courseGrades = {
+    style : "./style/style-content-students.css", title: "Course",
+    get html(){return "Empty Course Grades"}
+};
 var grades = {style : "./style/style-content-grades.css", title:"Grades",
     get html(){
         return getGradesPage();
@@ -234,6 +234,24 @@ function changeContent(content, id){
             title:"Forum"
         };
     }
+    if(content===course && id!==undefined){
+        content= {
+            get html() {
+                return getCourseContentPage(id,loggedUser.role);
+            },
+            style : "./style/style-content-course.css",
+            title : degreeCourses.get(loggedUser.degree)[id]
+        };
+    }
+    if(content===courseGrades && id!==undefined){
+        content= {
+            get html() {
+                return getCourseGradesPage(id,loggedUser.role);
+            },
+            style : "./style/style-content-grades.css",
+            title : degreeCourses.get(loggedUser.degree)[id] + "Grades"
+        };
+    }
     // Change content of the page.
     $("#content").html(content.html);
     // Change title of the page.
@@ -242,17 +260,7 @@ function changeContent(content, id){
     window.name=content.title+":"+id;
     $('html').animate({ scrollTop: 0 }, 'fast');
     if(loggedUser.username !== undefined){
-        if(loggedUser.role>0){
-            $(".courseButton").each(function () {
-                this.text="Students";
-                $(this).css("font-weight", "strong");
-            });
-        }else{
-            $(".courseButton").each(function (index, element) {
-                this.text="My Courses";
-                $(this).css("font-weight", "strong");
-            });
-        }
+
         $("#loggedName").text(loggedUser.fullName);
         $("#loggedImg").attr("src",loggedUser.picture);
         $("#userHeader").show("slow");
