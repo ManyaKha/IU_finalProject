@@ -61,83 +61,9 @@ var registerPage = {get html() {
     <input value="Save" onclick="registerUser()" type="submit" class="authButton"/>
     <input type="reset" value="Delete" onclick="void()" class="authButton"/>
 </form>`}, style :"./style/style-content-login.css", title:"Log-In"};
-var blog = {get html() {return `<!--Article 1 HTML-->
-<article> <!-- Here starts the main part of the page, the middle section --> <!-- Different sections for the different videos and images with its respective paragraphs -->
-    <img class="articleBanner" src ="./images/HTML5 Logo.svg" width="200" height="200" alt="HTML 5 Logo">
-    <h1>What is HTML?</h1>
-    <p class="intro-p">Hypertext Markup Language (HTML) is the standard markup language for documents designed to be displayed in a web browser. It can be assisted by technologies such as Cascading Style Sheets (CSS) and scripting languages such as JavaScript. Web browsers receive HTML documents from a web server or from local storage and render the documents into multimedia web pages. HTML describes the structure of a web page semantically and originally included cues for the appearance of the document. </p>
-    <div class="video-container"><!-- Video 1 -->
-        <h2 class="video-title-reduced">HTML 5 as Fast As Posible</h2>
-        <iframe width="420" height="236" src="https://www.youtube-nocookie.com/embed/IsXEVQRaTX8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <h2 class="video-title-desktop">HTML 5 as Fast As Posible</h2>
-        <p>HTML 5 explained as fast as posible. What changes did the fifth iteration of HTML bring? Why is a new HTML revision so important?</p>
-    </div>
-    <div class="video-container"><!-- Video 2 -->
-        <h2 class="video-title-reduced">HTML Crash Course</h2>
-        <iframe width="420" height="236" src="https://www.youtube-nocookie.com/embed/UB1O30fR-EE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <h2 class="video-title-desktop">HTML Crash Course</h2>
-        <p>This crash course will cram as much about HTML that posible. This is meant for absolute beginners. If you are interested in learning HTML but know nothing, then you are in the right place.</p>
-    </div>
-    <div class="video-container"><!-- Video 3 -->
-        <h2 class="video-title-reduced">HTML History</h2>
-        <iframe width="420" height="236" src="https://www.youtube-nocookie.com/embed/41mnNyMxPOA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <h2 class="video-title-desktop">HTML History</h2>
-        <p>The Internet existed before the Web, but the Web redefined the Internet - what started out as a protocol for helping scientists share documents and references has turned into one of the most important forces in the 21st century. But how did we get here?</p>
-    </div>
-</article>
-<!--Article 2 CSS-->
-<article><!-- Same functionality as the previous article --> <!-- Here starts the main part of the page, the middle section --> <!-- Different sections for the different videos and images with its respective paragraphs -->
-    <img class="articleBanner" src ="./images/CSS3_logo.svg" width="200" height="200" alt="CSS 3 Logo">
-    <h1>What is CSS?</h1>
-    <p class="intro-p">Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language such as HTML. CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript. CSS is designed to enable the separation of presentation and content, including layout, colors, and fonts. This separation can improve content accessibility, provide more flexibility and control in the specification of presentation characteristics.</p>
-    <div class="video-container">
-        <h2 class="video-title-reduced">Learn CSS in 20 minutes </h2>
-        <iframe width="420" height="236" src="https://www.youtube-nocookie.com/embed/1PnVor36_40" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <h2 class="video-title-desktop">Learn CSS in 20 minutes </h2>
-        <p>In this video we will cover everything you need to know to get up and running with CSS in only 20 minutes. We will cover CSS syntax, how to add CSS to your HTML, CSS colors, CSS units, the box model, and best practices for CSS...</p>
-    </div>
-    <div class="video-container">
-        <h2 class="video-title-reduced">CSS Flexbox</h2>
-        <iframe width="420" height="236" src="https://www.youtube-nocookie.com/embed/fYq5PXgSsbE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <h2 class="video-title-desktop">CSS Flexbox</h2>
-        <p>In this video we will cover everything you need to know about CSS flexbox in only 15 minutes. We will cover what flexbox is, how flexbox works, and the different properties you can use to layout and style your flexbox containers.</p>
-    </div>
-    <div class="video-container">
-        <h2 class="video-title-reduced">CSS Grid </h2>
-        <iframe width="420" height="236" src="https://www.youtube-nocookie.com/embed/9zBsdzdE4sM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <h2 class="video-title-desktop">CSS Grid</h2>
-        <p>In this video we will cover everything you need to know about CSS grid in only 20 minutes. We will cover what grid is, how grid differs from flexbox, how grid works, and the different properties you can use to layout and style your grid containers and items.</p>
-    </div>
-</article>	
-<!--Article 3 JavaScript-->
-<article><!-- Same functionality as the previous article --> <!-- Here starts the main part of the page, the middle section --> <!-- Different sections for the different videos and images with its respective paragraphs -->
-    <img class="articleBanner" src ="./images/jslogo.png" width="200" height="200" alt="JavaScript Logo">
-    <h1>What is JavaScript?</h1>
-    <p class="intro-p">JavaScript, often abbreviated as JS, is a programming language that conforms to the ECMAScript specification. JavaScript is high-level, often just-in-time compiled, and multi-paradigm. It has curly-bracket syntax, dynamic typing, prototype-based object-orientation, and first-class functions.
-
-        Alongside HTML and CSS, JavaScript is one of the core technologies of the World Wide Web. JavaScript enables interactive web pages and is an essential part of web applications. The vast majority of websites use it for client-side page behavior, and all major web browsers have a dedicated JavaScript engine to execute it. </p>
-    <div class="video-container">
-        <h2 class="video-title-reduced">JavaScript crash Course </h2>
-        <iframe width="420" height="236" src="https://www.youtube-nocookie.com/embed/hdI2bqOjy3c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <h2 class="video-title-desktop">JavaScript crash Course </h2>
-        <p>In this crash course we will go over the fundamentals of JavaScript including more modern syntax like classes, arrow functions, etc. This is the starting point on my channel for learning JS.</p>
-    </div>
-    <div class="video-container">
-        <h2 class="video-title-reduced">JavaScript Object Oriented</h2>
-        <iframe width="420" height="236" src="https://www.youtube-nocookie.com/embed/vDJpGenyHaA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <h2 class="video-title-desktop">JavaScript Object Oriented</h2>
-        <p>In this video we will look at some of the object oriented programming concepts in JavaScript including: Object Literals, Constructors & This, Prototypes & Inheritence, Object.create(), ES6 Classes & Subclasses.</p>
-    </div>
-    <div class="video-container">
-        <h2 class="video-title-reduced">JavaScript Full Course</h2>
-        <iframe width="420" height="236" src="https://www.youtube-nocookie.com/embed/PkZNo7MFNFg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <h2 class="video-title-desktop">JavaScript Full Course</h2>
-        <p>This complete 134-part JavaScript tutorial for beginners will teach you everything you need to know to get started with the JavaScript programming language.</p>
-    </div>
-</article>`}, style :"./style/style-content-blog.css", title:"Home"};
 var forum = {get html() {return getTopicsPage()}, style : "./style/style-content-forum.css", title:"Forum"};
 
-var courses = {style : "./style/style-content-students.css", title:"Students", get html(){
+var courses = {style : "./style/style-content-courses.css", title:"Students", get html(){
             return getCoursesPage();
     }};
 
@@ -149,34 +75,21 @@ var courseGrades = {
     style : "./style/style-content-students.css", title: "Course",
     get html(){return "Empty Course Grades"}
 };
+var courseStudents = {
+    style : "./style/style-content-students.css", title: "Course",
+    get html(){return "Empty Course Grades"}
+};
 var grades = {style : "./style/style-content-grades.css", title:"Grades",
     get html(){
         return getGradesPage();
     }};
-var events = {get html() {return `
-<h1> Next Events</h1>
-<p>04/06/2020 - First HTML/CSS Exam</p>
-<p>30/05/2020 - Create your own netflix - Assigment due date.</p>
-<p>15/09/2019 - Deliver P1 (OPTIONAL)</p>
-<p>12/09/2019 - Introduction Test</p>
-<p>07/09/2019 - Course Presentation.</p>
-`}, style : "./style/style-content.css", title:"Events"};
-var news = {get html() {return `
-<h1> Last News</h1> <!-- HEADER FOR THE NEWS -->
-<!-- NEWS DESCRIPTION -->
-<p>24/04/2020 - CSS post published</p>
-<p>20/01/2020 - HTML post published</p>
-<p>18/09/2019 - Added HTML article</p>
-<p>24/09/2019 - Mondey leture delayed</p>
-<p>07/01/2019 - Welcome to the Course</p>
-`},style : "./style/style-content.css", title:"News"};
 var copyright = {get html() {return `
 <h1>Copyright Notice</h1>
 <p>Copyright © <b>HGC Courses</b> 2020 All Rights Reserved
 
   All files and information contained in this Website or Blog are copyright by <b>HGC Courses</b>, and may not be duplicated, copied, modified or adapted, in any way without our written permission. Our Website or Blog may contain our service marks or trademarks as well as those of our affiliates or other companies, in the form of words, graphics, and logos. Your use of our Website, Blog or Services does not constitute any right or license for you to use our service marks or trademarks, without the prior written permission of <b>HGC Courses</b>. Our Content, as found within our Website, Blog and Services, is protected under United States and foreign copyrights. The copying, redistribution, use or publication by you of any such Content, is strictly prohibited. Your use of our Website and Services does not grant you any ownership rights to our Content.
   
-  Copyright © Orion Systems. All Rights Reserved. </p>
+  Copyright © <b>HGC Courses</b>. All Rights Reserved. </p>
 `},style : "./style/style-content.css", title:"Copyright"};
 var privacy = {get html() {return `<!-- This is the main part of this page, where we describe the privacy content and the information collection and use, in the middle section with two different headers with its respective paragraphs -->
 <h1>Privacy Policy of HGC Courses</h1><!-- HEADER 1 -->
@@ -194,12 +107,9 @@ var aboutUs = {get html() {return ` <!-- This is the main part of the page, wher
 
 // This map is used for locating the page content given a page title.
 let pages = new Map();
-pages.set(blog.title,blog);
 pages.set(forum.title,forum);
 pages.set(courses.title,courses);
 pages.set(grades.title,grades);
-pages.set(events.title,events);
-pages.set(news.title,news);
 pages.set(copyright.title,copyright);
 pages.set(privacy.title,privacy);
 pages.set(aboutUs.title,aboutUs);
@@ -207,9 +117,20 @@ pages.set(aboutUs.title,aboutUs);
 $(document).ready(function() {
     //Restore the current page after page refresh.
     if(!pages.has(window.name.split(":")[0]))
-        changeContent(blog);
+        changeContent(courses);
     changeContent(pages.get(window.name.split(":")[0]),parseInt(window.name.split(":")[1]) >=0 ? window.name.split(":")[1]:undefined);
+    addCourses();
 });
+
+function addCourses(){
+    if(loggedUser.username!==undefined){
+        let html ="";
+        for(let i = 0; i<degreeCourses.get(loggedUser.degree).length;i++){
+            html+= `<li><a href="javascript:changeContent(course,`+i+`)">`+degreeCourses.get(loggedUser.degree)[i]+`</a></li>`;
+        }
+        $("#navCourses").after(html);
+    }
+}
 
 function downloadTable(user){
     $("#grades-"+user).table2excel({
@@ -249,7 +170,16 @@ function changeContent(content, id){
                 return getCourseGradesPage(id,loggedUser.role);
             },
             style : "./style/style-content-grades.css",
-            title : degreeCourses.get(loggedUser.degree)[id] + "Grades"
+            title : degreeCourses.get(loggedUser.degree)[id] + " Grades"
+        };
+    }
+    if(content===courseStudents && id!==undefined){
+        content= {
+            get html() {
+                return getCourseStudentsPage(id,loggedUser.role);
+            },
+            style : "./style/style-content-students.css",
+            title : degreeCourses.get(loggedUser.degree)[id] + " Students"
         };
     }
     // Change content of the page.

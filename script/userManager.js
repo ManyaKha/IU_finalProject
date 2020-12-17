@@ -228,42 +228,6 @@ var users = [
         "./images/user11.jpg"
     ),
 ];
-//if the login for the user has been succesfully achieved, the system will load a student page showing the main page of the blog
-function getStudentsPage (){
-//loading the main page
-    let pageContent =
-    `<div id="content">
-    <h1 id=content-title>
-        Students
-    </h1>`;
-    for(let i = 0; i < users.length; i++){
-        if(users[i].role!==0)
-            continue;
-        pageContent+= //the page will change the user pictures for each student, showing the picture in the upper right side of the screen
-            `
-            <!-- Student `+i+` -->
-            <div class="student-container">
-                <div class="student">
-                    <img class="student-img" src ="`+users[i].picture+`" width="100" height="100" alt="Student profile picture">
-                    <a href="mailto:`+users[i].email+`"><svg width = "60" height="60" viewbox="0 0 230.17 230.17" aria-hidden="true">
-                        <path d="M230,49.585c0-0.263,0.181-0.519,0.169-0.779l-70.24,67.68l70.156,65.518c0.041-0.468-0.085-0.94-0.085-1.418V49.585z"/>
-                        <path d="M149.207,126.901l-28.674,27.588c-1.451,1.396-3.325,2.096-5.2,2.096c-1.836,0-3.672-0.67-5.113-2.013l-28.596-26.647
-                            L11.01,195.989c1.717,0.617,3.56,1.096,5.49,1.096h197.667c2.866,0,5.554-0.873,7.891-2.175L149.207,126.901z"/>
-                        <path d="M115.251,138.757L222.447,35.496c-2.427-1.443-5.252-2.411-8.28-2.411H16.5c-3.943,0-7.556,1.531-10.37,3.866
-                            L115.251,138.757z"/>
-                        <path d="M0,52.1v128.484c0,1.475,0.339,2.897,0.707,4.256l69.738-67.156L0,52.1z"/>
-                    </svg></a>
-                    <div class="student-info">
-                        <h1>`+users[i].fullName+`</h1>
-                        <p><b>ID:</b> `+users[i].nia+(users[i].isExchange ? `<b> Exchange Student</b>`:"")+` </p>
-                        <p>`+users[i].degreeName()+`</p>
-                    </div>
-                </div>
-        </div>`
-    }
-    pageContent+=`</div>`;
-    return pageContent;
-}
 
 //the grades button will show a page containing a table with all the courses and the different marks that the student had score for different assignments
 function getGradesPage(){
@@ -342,7 +306,8 @@ function registerUser(){
     document.cookie="loggedUser="+newUser.cookie().split("=")[1];
     users.push(newUser);
     loggedUser=newUser;
-    changeContent(blog);//changing the type of page
+    changeContent(courses);//changing the type of page.
+    addCourses();
 }
 
 
@@ -375,14 +340,15 @@ function loginUser() {
         alert("Email not registered.");//case that the user is not register in the database cookie
         return;
     }
-    if (password === user[2]){ // If the password is ok, log the user in and store a logon cookie. Also, change the content to the blog page.
+    if (password === user[2]){ // If the password is ok, log the user in and store a logon cookie. Also, change the content to the courses page.
         loggedUser=userFromArray(user);
         document.cookie="loggedUser="+loggedUser.cookie();
-        changeContent(blog);
+        changeContent(courses);
         alert("Welcome again " + user[3]);
     }else {
         alert("Wrong Password. Please try again");//in case the user introduce a valid email but an invalid password
     }
+    addCourses();
 }
 
 $(document).ready(function() {

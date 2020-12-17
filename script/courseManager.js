@@ -4,9 +4,17 @@ degreeCourses.set(0, ["User Interfaces","Calculus","Linear Algebra", "Programmin
 degreeCourses.set(1, ["Physics I","Physics II", "Calculus", "Linear Algebra"]);
 degreeCourses.set(2,["Principles of Phisycs","Calculus", "Advanced Phisycs", "Linear Algebra"]);
 degreeCourses.set(3, ["Physics I","Physics II", "Calculus", "Linear Algebra"]);
-
 // Teacher.
 degreeCourses.set(-1,["Physics I","Physics II", "Calculus", "Linear Algebra", "User Interfaces","Programming","Advanced Phisycs","Principles of Phisycs"]);
+
+function degreeContainsCourse(degree, course){
+    for (let i=0;i<4;i++) {
+        if(degreeCourses.get(degree)[i]===degreeCourses.get(loggedUser.degree)[course])
+            return true;
+    }
+    return false;
+}
+
 function Activity(course, title, dueDate){
     this.course = course;
     this.title = title;
@@ -40,7 +48,7 @@ function getActivities(course,mode){
     return html;
 }
 
-//the my courses button will show the list of the courses that the user is studing
+//the Courses pages shows all the different courses of the user degree.
 function getCoursesPage() {
     let html = `<h1>My Courses</h1>
             <h2>`+(loggedUser.degree >=0?degrees[loggedUser.degree]:"All Courses")+`</h2>`;
@@ -51,24 +59,18 @@ function getCoursesPage() {
 }
 
 function getCourseContentPage(course, mode){
+    let studentButton = `<a href="javascript:changeContent(courseStudents,`+course+`)">Students</a>`;
     return `
         <h1> `+degreeCourses.get(loggedUser.degree)[course]+`</h1>
         <div class="button-holder">
-        <a>Contents</a>
-        <a href="javascript:changeContent(courseGrades,`+course+`)">Grades</a>
+        <a><b>Contents</b></a>
+        <a href="javascript:changeContent(courseGrades,`+course+`)">Grades</a>`
+        +(mode>=1?studentButton:"")+`
         </div>
         <div id="activities">
             `+ getActivities(degreeCourses.get(loggedUser.degree)[course],mode) +`
         </div>
     `;
-}
-
-function degreeContainsCourse(degree, course){
-    for (let i=0;i<4;i++) {
-        if(degreeCourses.get(degree)[i]===degreeCourses.get(loggedUser.degree)[course])
-            return true;
-    }
-    return false;
 }
 
 function getCourseGradesPage(course, mode){
@@ -79,7 +81,6 @@ function getCourseGradesPage(course, mode){
             case 2: return user.course3;
             case 3: return user.course4;
         }
-
     }
     function getGrades(){
         if(mode===0){
@@ -125,11 +126,57 @@ function getCourseGradesPage(course, mode){
             return table;
         }
     }
+    let studentButton = `<a href="javascript:changeContent(courseStudents,`+course+`)">Students</a>`;
     return `
         <h1> `+degreeCourses.get(loggedUser.degree)[course]+`</h1>
         <div class="button-holder">
         <a  href="javascript:changeContent(course,`+course+`)">Contents</a>
-        <a>Grades</a>
+        <a><b>Grades</b></a>`
+        +(mode>=1?studentButton:"")+`
         </div>
         `+getGrades();
+}
+function getCourseStudentsPage(course, mode){
+    function getStudentsPage (){
+//loading the main page
+        let pageContent = `<div id="studends">`;
+        for(let i = 0; i < users.length; i++){
+            if(users[i].role!==0 || !degreeContainsCourse(users[i].degree,course))
+                continue;
+
+            pageContent+=
+                `
+            <!-- Student `+i+` -->
+            <div class="student-container">
+                <div class="student">
+                    <img class="student-img" src ="`+users[i].picture+`" width="100" height="100" alt="Student profile picture">
+                    <a href="mailto:`+users[i].email+`"><svg width = "60" height="60" viewbox="0 0 230.17 230.17" aria-hidden="true">
+                        <path d="M230,49.585c0-0.263,0.181-0.519,0.169-0.779l-70.24,67.68l70.156,65.518c0.041-0.468-0.085-0.94-0.085-1.418V49.585z"/>
+                        <path d="M149.207,126.901l-28.674,27.588c-1.451,1.396-3.325,2.096-5.2,2.096c-1.836,0-3.672-0.67-5.113-2.013l-28.596-26.647
+                            L11.01,195.989c1.717,0.617,3.56,1.096,5.49,1.096h197.667c2.866,0,5.554-0.873,7.891-2.175L149.207,126.901z"/>
+                        <path d="M115.251,138.757L222.447,35.496c-2.427-1.443-5.252-2.411-8.28-2.411H16.5c-3.943,0-7.556,1.531-10.37,3.866
+                            L115.251,138.757z"/>
+                        <path d="M0,52.1v128.484c0,1.475,0.339,2.897,0.707,4.256l69.738-67.156L0,52.1z"/>
+                    </svg></a>
+                    <div class="student-info">
+                        <h1>`+users[i].fullName+`</h1>
+                        <p><b>ID:</b> `+users[i].nia+(users[i].isExchange ? `<b> Exchange Student</b>`:"")+` </p>
+                        <p>`+users[i].degreeName()+`</p>
+                    </div>
+                </div>
+        </div>`
+        }
+        pageContent+=`</div>`;
+        return pageContent;
+    }
+
+    let studentButton = `<a href="javascript:changeContent(courseStudents,`+course+`)"><b>Students</b></a>`;
+    return `
+        <h1 id="courseTitle"> `+degreeCourses.get(loggedUser.degree)[course]+`</h1>
+        <div class="button-holder">
+        <a  href="javascript:changeContent(course,`+course+`)">Contents</a>
+        <a href="javascript:changeContent(courseGrades,`+course+`)">Grades</a>`
+        +(mode>=1?studentButton:"")+`
+        </div>
+        `+getStudentsPage();
 }

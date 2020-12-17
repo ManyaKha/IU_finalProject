@@ -4,7 +4,7 @@
     padding-bottom: 10px;
 }
 
-#content a {
+.button-holder a {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
     background-color: var(--light_purple);
@@ -16,6 +16,21 @@
     width: 110px;
     margin-left: 10px;
     color: var(--dark_blue);
+}
+.download{
+    border-radius: var(--border_radius);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+    width: 100%;
+    background-color: var(--light_purple);
+    color:var(--dark_blue);
+    margin-top: 10px;
+    margin-bottom: 40px;
+    padding: 10px 0;
+    text-align: center;
+    text-decoration: none;
+    display: block;
 }
 #content h1{
     font-size: 26px;
@@ -46,9 +61,6 @@
 #content th, td{
     border: 2px solid white;
 }
-.download{
-    padding-bottom: 40px;
-}
 /* Odds and evens rows have different colors */
 #content tr:nth-child(even){
     background-color: var(--light_light_purple);
@@ -66,20 +78,6 @@
 #content td{
     color: var(--dark_blue);
     padding: 10px;
-}
-.download{
-    border-radius: var(--border_radius);
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px;
-    font-weight: normal;
-    width: 100%;
-    background-color: var(--light_purple);
-    color:var(--dark_blue);
-    margin-top: 10px;
-    padding: 10px 0;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
 }
 .download:hover{
     background-color: var(--light_light_purple);
