@@ -71,20 +71,20 @@ function showCalendar(month, year) { //this function will create a table with di
                 row.appendChild(cell);
                 date++;
                 //changing the color of the cells for the different events
-                if (cell.textContent == 15 && month == 10 && year == 2020) {
+                if (cell.textContent == 15 && month == 11 && year == 2020) {
                     change_colorEvent(cell)
                 }
-                if (cell.textContent == 30 && month == 10 && year == 2020) {
+                if (cell.textContent == 30 && month == 11 && year == 2020) {
                     change_colorEvent(cell)
                 }
-                if (cell.textContent == 4 && month == 10 && year == 2020) {
+                if (cell.textContent == 4 && month == 11 && year == 2020) {
                     change_colorEvent(cell)
                 }
                 if (cell.textContent == 6 && month == 11 && year == 2020) {
                     change_colorEvent(cell)
                 }
                 //changing the color of the actual day (blue color)
-                if (cell.textContent == today.getDate() && month == 10 && year == 2020) {
+                if (cell.textContent == today.getDate() && month == 11 && year == 2020) {
                     change_colorday(cell)
                 }
             }
@@ -98,8 +98,8 @@ function showCalendar(month, year) { //this function will create a table with di
 }
 //functions to change the color of the important events and the color of the actual day of the month
 function change_colorday(cell){
-    cell.style.backgroundColor="#00CDFF"
+    cell.style.backgroundColor="#7DC6FF"
 }
 function change_colorEvent(cell){
-    cell.style.backgroundColor="#F96A6A"
+    cell.style.backgroundColor="#FF3084"
 }
