@@ -21,7 +21,45 @@ h2{
 	font-family: Arial, Helvetica, sans-serif;
 	padding-bottom: 7px;
 }
+.courseHolder{
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 10px 10px;
+	background-color: var(--light_purple);
+	color: var(--dark_blue);
+	border-radius: var(--border_radius);
+	margin-top: 20px;
+	margin-right: 10%;
+}
+.courseHolder:hover{
+	background-color: var(--light_light_purple);
+	font-weight: bold;
+}
+.edit{
+	cursor: pointer;
+	float: right;
+	fill: var(--dark_blue);
+	margin-right: 10px;
+}
+.courseHolder:hover .edit{
+	fill:black;
+}
+.courseButton{
+	display: inline;
+	padding-right: 10px;
+	padding-left: 10px;
+}
+.courseButton:hover{
+	cursor: pointer;
+}
+.delete {
+	cursor: pointer;
+	float: right;
+	fill: darkred;
 
+}
+.courseHolder:hover .delete{
+	fill: red;
+}
 #content{
 padding: 20px;
 }

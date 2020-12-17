@@ -61,8 +61,6 @@ var registerPage = {get html() {
     <input value="Save" onclick="registerUser()" type="submit" class="authButton"/>
     <input type="reset" value="Delete" onclick="void()" class="authButton"/>
 </form>`}, style :"./style/style-content-login.css", title:"Log-In"};
-var forum = {get html() {return getTopicsPage()}, style : "./style/style-content-forum.css", title:"Forum"};
-
 var courses = {style : "./style/style-content-courses.css", title:"Students", get html(){
             return getCoursesPage();
     }};
@@ -107,7 +105,6 @@ var aboutUs = {get html() {return ` <!-- This is the main part of the page, wher
 
 // This map is used for locating the page content given a page title.
 let pages = new Map();
-pages.set(forum.title,forum);
 pages.set(courses.title,courses);
 pages.set(grades.title,grades);
 pages.set(copyright.title,copyright);
@@ -147,14 +144,6 @@ function changeContent(content, id){
         content=loginPage;
     }
 
-    // open a specific forum topic given an id
-    if(content===forum && id!==undefined){
-        content={
-            get html(){return getTopicHtml(id);} ,
-            style :"./style/style-content-forum.css",
-            title:"Forum"
-        };
-    }
     if(content===course && id!==undefined){
         content= {
             get html() {

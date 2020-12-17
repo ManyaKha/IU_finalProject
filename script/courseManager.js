@@ -4,9 +4,15 @@ degreeCourses.set(0, ["User Interfaces","Calculus","Linear Algebra", "Programmin
 degreeCourses.set(1, ["Physics I","Physics II", "Calculus", "Linear Algebra"]);
 degreeCourses.set(2,["Principles of Phisycs","Calculus", "Advanced Phisycs", "Linear Algebra"]);
 degreeCourses.set(3, ["Physics I","Physics II", "Calculus", "Linear Algebra"]);
-// Teacher.
+// Teacher has all courses.
 degreeCourses.set(-1,["Physics I","Physics II", "Calculus", "Linear Algebra", "User Interfaces","Programming","Advanced Phisycs","Principles of Phisycs"]);
 
+/**
+ * Check that the specified course is part of the specified degree.
+ * @param degree Degree ID
+ * @param course CourseID.
+ * @returns {boolean}
+ */
 function degreeContainsCourse(degree, course){
     for (let i=0;i<4;i++) {
         if(degreeCourses.get(degree)[i]===degreeCourses.get(loggedUser.degree)[course])
@@ -15,6 +21,13 @@ function degreeContainsCourse(degree, course){
     return false;
 }
 
+/**
+ * Represents an activity for a course.
+ * @param course Course Name
+ * @param title Title of the activity.
+ * @param dueDate Due date for the activity.
+ * @constructor
+ */
 function Activity(course, title, dueDate){
     this.course = course;
     this.title = title;
@@ -30,6 +43,7 @@ function Activity(course, title, dueDate){
     }
 }
 
+//Create all activities for each subject.
 const activities = [
     new Activity("Physics I", "Presentation Slides"),
     new Activity("Physics I", "Unit I Slides"),
@@ -39,6 +53,12 @@ const activities = [
     new Activity("Calculus", "Induction Slides")
 ];
 
+/**
+ * Gets all activities for a course
+ * @param course Course name.
+ * @param mode User Role
+ * @returns {string}
+ */
 function getActivities(course,mode){
     let html ="";
     activities.forEach(element => {
@@ -48,16 +68,42 @@ function getActivities(course,mode){
     return html;
 }
 
-//the Courses pages shows all the different courses of the user degree.
+/**
+ * Shows all different courses available for the current user.
+ * @returns {string}
+ */
 function getCoursesPage() {
-    let html = `<h1>My Courses</h1>
+    let html="";
+    if(loggedUser.role===0){
+        html = `<h1>My Courses</h1>
             <h2>`+(loggedUser.degree >=0?degrees[loggedUser.degree]:"All Courses")+`</h2>`;
-    for(let i = 0; i<degreeCourses.get(loggedUser.degree).length;i++){
-        html+= `<a href="javascript:changeContent(course,`+i+`)">`+degreeCourses.get(loggedUser.degree)[i]+`</a>`
+        for(let i = 0; i<degreeCourses.get(loggedUser.degree).length;i++){
+            html+= `<a href="javascript:changeContent(course,`+i+`)">`+degreeCourses.get(loggedUser.degree)[i]+`</a>`;
+        }
+    }else{
+        html = `<h1>Manage Courses</h1>
+            <h2>`+(loggedUser.degree >=0?degrees[loggedUser.degree]:"All Courses")+`</h2>`;
+        for(let i = 0; i<degreeCourses.get(loggedUser.degree).length;i++){
+            html+= `<div class="courseHolder"><div class="courseButton" onclick="changeContent(course,`+i+`)">`+degreeCourses.get(loggedUser.degree)[i]+`</div><svg class="delete" width="15" height="15" viewBox="0 0 1000 1000" aria-hidden="true">
+            <path d="M242.3,990.3c-64.5,0-116.9-51.4-116.9-116V301.9c0-19.4,15.9-35.1,35.2-35.1c19.4,0,35.2,15.7,35.2,35.1v572.4c0,25.8,21,45.5,46.5,45.5h514.3c27,0,48-19.7,48-45.5V301.9c0-19.4,15.1-35.1,34.5-35.1c19.4,0,34.5,15.7,34.5,35.1v572.4c0,64.5-52.5,116-116.9,116H242.3L242.3,990.3z"/><path d="M954.9,149.2H687.6V44.8c0-19.4-16.3-35-35.6-35H348.1c-19.4,0-35.3,15.7-35.3,35v104.4H45.1C25.7,149.2,10,165,10,184.4c0,19.4,15.7,35.2,35.1,35.2h909.9c19.4,0,35.1-15.9,35.1-35.2C990,165,974.3,149.2,954.9,149.2L954.9,149.2z M617.1,149.2H383.2V78.7h233.9V149.2L617.1,149.2z"/><path d="M429.7,745.8V395.4c0-19.4-15.9-35.1-35.2-35.1c-19.4,0-35.2,15.7-35.2,35.1v350.4c0,19.4,15.9,35.1,35.2,35.1C413.8,780.8,429.7,765.1,429.7,745.8L429.7,745.8z"/><path d="M639.6,745.8V395.4c0-19.4-15.1-35.1-34.5-35.1c-19.4,0-34.5,15.7-34.5,35.1v350.4c0,19.4,15.1,35.1,34.5,35.1C624.5,780.8,639.6,765.1,639.6,745.8L639.6,745.8z"/>
+        </svg><svg class="edit" width="15" height="15" viewBox="0 0 528.899 528.899" aria-hidden="true">
+            <path d="M328.883,89.125l107.59,107.589l-272.34,272.34L56.604,361.465L328.883,89.125z M518.113,63.177l-47.981-47.981
+		c-18.543-18.543-48.653-18.543-67.259,0l-45.961,45.961l107.59,107.59l53.611-53.611
+		C532.495,100.753,532.495,77.559,518.113,63.177z M0.3,512.69c-1.958,8.812,5.998,16.708,14.811,14.565l119.891-29.069
+		L27.473,390.597L0.3,512.69z"/>
+        </svg></div>`;
+        }
     }
+
     return html;
 }
 
+/**
+ * Gets the content for a certain course depending on the current user role.
+ * @param course Course ID.
+ * @param mode User Mode (Role)
+ * @returns {string} HTML
+ */
 function getCourseContentPage(course, mode){
     let studentButton = `<a href="javascript:changeContent(courseStudents,`+course+`)">Students</a>`;
     return `
@@ -73,6 +119,12 @@ function getCourseContentPage(course, mode){
     `;
 }
 
+/**
+ * Gets the grades of the current student in the specified course. If the user is not a student, it will show the grades of all students.
+ * @param course Course ID
+ * @param mode User Mode (Role)
+ * @returns {string} HTML
+ */
 function getCourseGradesPage(course, mode){
     function getStudentCourse(user){
         switch (degreeCourses.get(user.degree).findIndex(userCourse => userCourse===degreeCourses.get(loggedUser.degree)[course])){
@@ -136,9 +188,15 @@ function getCourseGradesPage(course, mode){
         </div>
         `+getGrades();
 }
+
+/**
+ * Gets a page with all the students in the given course.
+ * @param course Course ID
+ * @param mode User mode (Role)
+ * @returns {string} HTML
+ */
 function getCourseStudentsPage(course, mode){
     function getStudentsPage (){
-//loading the main page
         let pageContent = `<div id="studends">`;
         for(let i = 0; i < users.length; i++){
             if(users[i].role!==0 || !degreeContainsCourse(users[i].degree,course))
@@ -169,7 +227,6 @@ function getCourseStudentsPage(course, mode){
         pageContent+=`</div>`;
         return pageContent;
     }
-
     let studentButton = `<a href="javascript:changeContent(courseStudents,`+course+`)"><b>Students</b></a>`;
     return `
         <h1 id="courseTitle"> `+degreeCourses.get(loggedUser.degree)[course]+`</h1>

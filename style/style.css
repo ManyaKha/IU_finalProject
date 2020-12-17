@@ -48,6 +48,9 @@ h1,h2{
 	margin-right: 10px;
 	float: right;
 }
+#userHeader:hover {
+	cursor: pointer;
+}
 #userHeader:hover h2{
 	font-weight: bold;
 }
@@ -114,6 +117,8 @@ h1,h2{
 	display: none;
 	float: left;
 	padding: 5px;
+	padding-left: 10px;
+	fill: var(--dark_blue);
 }
 /* Styling the header navigation menu. */
 #button {
