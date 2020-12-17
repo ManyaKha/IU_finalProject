@@ -133,12 +133,14 @@ function getCoursesPage() {
  */
 function getCourseContentPage(course, mode){
     let studentButton = `<a href="javascript:changeContent(courseStudents,`+course+`)">Students</a>`;
+    let newActivityButton = `<a href="javascript:void(0)">New Activity</a>`;
+
     return `
         <h1> `+degreeCourses.get(loggedUser.degree)[course]+`</h1>
         <div class="button-holder">
         <a><b>Contents</b></a>
         <a href="javascript:changeContent(courseGrades,`+course+`)">Grades</a>`
-        +(mode>=1?studentButton:"")+`
+        +(mode>=1?studentButton+newActivityButton:"")+`
         </div>
         <div id="activities">
             `+ getActivities(degreeCourses.get(loggedUser.degree)[course],mode) +`
