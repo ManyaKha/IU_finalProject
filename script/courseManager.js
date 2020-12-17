@@ -2,10 +2,10 @@ const degrees = ["Degree in Computer Science","Degree in Industrial Design","Deg
 const degreeCourses = new Map();
 degreeCourses.set(0, ["User Interfaces","Calculus","Linear Algebra", "Programming"]);
 degreeCourses.set(1, ["Physics I","Physics II", "Calculus", "Linear Algebra"]);
-degreeCourses.set(2,["Principles of Phisycs","Calculus", "Advanced Phisycs", "Linear Algebra"]);
+degreeCourses.set(2,["Principles of Physics","Calculus", "Advanced Physics", "Linear Algebra"]);
 degreeCourses.set(3, ["Physics I","Physics II", "Calculus", "Linear Algebra"]);
 // Teacher has all courses.
-degreeCourses.set(-1,["Physics I","Physics II", "Calculus", "Linear Algebra", "User Interfaces","Programming","Advanced Phisycs","Principles of Phisycs"]);
+degreeCourses.set(-1,["Physics I","Physics II", "Calculus", "Linear Algebra", "User Interfaces","Programming","Advanced Physics","Principles of Physics"]);
 
 /**
  * Check that the specified course is part of the specified degree.
@@ -59,25 +59,25 @@ const activities = [
     new Activity("Programming", "Module II. Loops and functions", "25/03/2021"),
     new Activity("Programming", "Module III. Objects and classes", "25/04/2021" ),
 
-    new Activity("User interfaces", "Introduction to HTML", "05/12/2020"),
-    new Activity("User interfaces", "Submission Assignment I"),
-    new Activity("User interfaces", "CSS and JavaScript", "03/01/2021"),
+    new Activity("User Interfaces", "Introduction to HTML", "05/12/2020"),
+    new Activity("User Interfaces", "Submission Assignment I"),
+    new Activity("User Interfaces", "CSS and JavaScript", "03/01/2021"),
 
-    new Activity("Linear algebra", "Topic I. Matrix algebra"),
-    new Activity("Linear algebra", "Topic II. Resolution of problems", "15/01/2021"),
-    new Activity("Linear algebra", "Topic III. Complex algebra", "20/01/2021"),
+    new Activity("Linear Algebra", "Topic I. Matrix algebra"),
+    new Activity("Linear Algebra", "Topic II. Resolution of problems", "15/01/2021"),
+    new Activity("Linear Algebra", "Topic III. Complex algebra", "20/01/2021"),
 
     new Activity("Physics II", "Magnetism"),
     new Activity("Physics II", "Electricity", "09/02/2021"),
     new Activity("Physics II", "Midterm I. Topics I and II", "14/02/2021"),
 
-    new Activity("Principles of physics", "Black holes"),
-    new Activity("Principles of physics", "Astronomy", "17/03/2021"),
-    new Activity("Principles of physics", "Stars","19/06/2021"),
+    new Activity("Principles of Physics", "Black holes"),
+    new Activity("Principles of Physics", "Astronomy", "17/03/2021"),
+    new Activity("Principles of Physics", "Stars","19/06/2021"),
 
-    new Activity("Advanced physics", "Doppler effect"),
-    new Activity("Advanced physics", "Exam I", "07/12/2020"),
-    new Activity("Advanced physics", "Exam II", "24/12/2020"),
+    new Activity("Advanced Physics", "Doppler effect"),
+    new Activity("Advanced Physics", "Exam I", "07/12/2020"),
+    new Activity("Advanced Physics", "Exam II", "24/12/2020"),
 ];
 
 /**
@@ -101,7 +101,7 @@ function getActivities(course,mode){
  */
 function getCoursesPage() {
     let html="";
-    if(loggedUser.role===0){
+    if(loggedUser.role<=1){
         html = `<h1>My Courses</h1>
             <h2>`+(loggedUser.degree >=0?degrees[loggedUser.degree]:"All Courses")+`</h2>`;
         for(let i = 0; i<degreeCourses.get(loggedUser.degree).length;i++){
