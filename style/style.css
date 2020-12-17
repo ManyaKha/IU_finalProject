@@ -22,7 +22,7 @@ header{
 	height: var(--header-height);
 	vertical-align: center;
 	z-index: 1;
-	box-shadow: 0 1px 15px rgba(0, 0, 0,0.2);
+	/*box-shadow: 0 1px 15px rgba(0, 0, 0,0.2);*/
 }
 h1,h2{
 	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -32,13 +32,16 @@ h1,h2{
 
 
 .header-content{
-	margin: 0;
+	margin: 5px;
+	margin-right:5px;
+	margin-left: 10px;
 	position: absolute;
 	width: 100%;
 	top: 50%;
 	-ms-transform: translateY(-50%);
 	right: 0;
 	transform: translateY(-50%);
+	background-color: #001133;
 }
 
 #userHeader{
@@ -108,7 +111,8 @@ h1,h2{
 	font-weight:bold;
 	font-family: Arial, Helvetica, sans-serif;
 	padding: 10px;
-	color: var(--dark_blue);
+	/*color: var(--dark_blue);*/
+	color:whitesmoke;
 }
 #logo{
 	display: none;
