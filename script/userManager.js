@@ -30,7 +30,7 @@ function userFromArray(array){
     return new User(array[0],array[1],array[2],array[3],array[4],new Date(parseInt(array[5],10)),array[6],parseInt(array[7],10),parseInt(array[8],10),array[9],array[10],array[11] === 'true',array[12], array[13].split(","),array[14].split(","),array[15].split(","),array[16].split(","));
 }
 //array storing all the users registered in the system with all their specific data including the mail and the password to login
-var users = [
+let users = [
     new User(
         "mikech",
         "1007833",

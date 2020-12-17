@@ -100,7 +100,7 @@ function getActivities(course,mode){
  * @returns {string}
  */
 function getCoursesPage() {
-    let html="";
+    let html;
     if(loggedUser.role<=1){
         html = `<h1>My Courses</h1>
             <h2>`+(loggedUser.degree >=0?degrees[loggedUser.degree]:"All Courses")+`</h2>`;
