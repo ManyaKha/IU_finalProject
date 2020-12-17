@@ -60,6 +60,7 @@
 				<li><a href="javascript:changeContent(grades)">Grades</a></li>
 				<li class="timeline-link"><a href="javascript:changeContent(news)">Last News</a></li>
 				<li class="open"><a href="javascript:changeContent(events)">Next Events</a></li>
+		
 			</ul>
 		</nav>
 		<section class="col-10 col-t-10" id="content">
@@ -83,7 +84,7 @@
 			<div class="popup-content">
 				<div class="container col-6 col-t-9"></div>
 				<div class="card">
-					<h3 class="card-header" id="monthAndYear">Date</h3>
+					<h3 class="card-header" id="monthAndYear" style="color:white">Date</h3>
 					<table class="table" style="width:100%" id="calendar"><!--we will be creating a table having as the main title the actual month and year we are-->
 						<thead>
 						<tr> <!-- the week days will represent the main columns of the table-->
@@ -103,7 +104,7 @@
 					</table>
 					<br/>
 					<form class="form-inline"><!-- here we have the options to jump to another month of the year or to another complete year-->
-						<label class="lead mr-2 ml-2" for="month">Jump To: </label>
+						<label class="lead mr-2 ml-2" for="month" style="color:white">Jump To: </label>
 						<select class="form-control col-sm-6" name="month" id="month" onchange="jump()"><!-- choose the month the user want-->
 							<option value=0>Jan</option>
 							<option value=1>Feb</option>

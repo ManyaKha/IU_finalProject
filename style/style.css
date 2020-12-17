@@ -202,7 +202,7 @@ nav li a:hover, nav li a:active{
 	font-size: 18px;
 	position: fixed;
 	text-align: center;
-	background: #eeefa8;   
+	background: #001133;   
 	border: 3px solid #2d2a32;
 	width: 100%;
 	top:25%;
@@ -282,14 +282,15 @@ button:hover {
 	height: 80%;
 }
 #calendar td:hover{
-    background-color: #f5f5f5;
+	background-color: #f5f5f5;
 }
 .popup-content table {
 	border: 0;
+	
 }
 
 .popup-content th {
-	background-color: #DDD92A;
+	background-color: #001133;
 	color: #2d2a32;
 }
 
@@ -297,6 +298,7 @@ button:hover {
 	font-family: Arial, Helvetica, sans-serif;
 	border-collapse: collapse;
 	padding: 6px;
+	color: white;
 }
 #content{
 	background-color: white;
