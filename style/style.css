@@ -4,7 +4,7 @@
 	--dark_blue: #191970;
 	--light_purple: #e6e6fa;
 	--light_light_purple: #f5f5ff;
-	--border_radius: 5px;
+	--border_radius: 10px;
 	--header-height: 70px;
 
 }
@@ -50,6 +50,9 @@ h1,h2{
 	margin-top: 9px;
 	margin-right: 10px;
 	float: right;
+}
+#userHeader:hover {
+	cursor: pointer;
 }
 #userHeader:hover h2{
 	font-weight: bold;
@@ -118,6 +121,8 @@ h1,h2{
 	display: none;
 	float: left;
 	padding: 5px;
+	padding-left: 10px;
+	fill: var(--dark_blue);
 }
 /* Styling the header navigation menu. */
 #button {
@@ -163,6 +168,7 @@ nav{
 	height:100%;
 }
 nav ul{
+	margin-top: 50px;
 	background-color: var(--light_light_purple);
 	border-radius: var(--border_radius);
 	width: 75%;
@@ -206,7 +212,7 @@ nav li a:hover, nav li a:active{
 	font-size: 18px;
 	position: fixed;
 	text-align: center;
-	background: #eeefa8;   
+	background: #001133;   
 	border: 3px solid #2d2a32;
 	width: 100%;
 	top:25%;
@@ -286,14 +292,15 @@ button:hover {
 	height: 80%;
 }
 #calendar td:hover{
-    background-color: #f5f5f5;
+	background-color: #f5f5f5;
 }
 .popup-content table {
 	border: 0;
+	
 }
 
 .popup-content th {
-	background-color: #DDD92A;
+	background-color: #001133;
 	color: #2d2a32;
 }
 
@@ -301,6 +308,7 @@ button:hover {
 	font-family: Arial, Helvetica, sans-serif;
 	border-collapse: collapse;
 	padding: 6px;
+	color: white;
 }
 #content{
 	background-color: white;
@@ -308,38 +316,9 @@ button:hover {
 main{
 	height: 100%;
 }
-/* Styling the right menu that shows the Events and News timelines. */
-aside{
-	position: fixed;
-	top:var(--header-height);
-	right: 0;
-	display: none;
-	background-color: #eeefa8;
-	/*height: 89.8vh;*/
-	height:100%;
-	min-height: 100%;
-}
-.timeline{	
-	font-family: Arial, Helvetica, sans-serif;
-	padding: 15px;
-	color:  #2d2a32;
-}
-.timeline h1{
-	font-weight: bold;
-	font-size: 24px;
-	padding-bottom: 10px;
-	padding-top: 10px
-}
-
 .open:hover{
 	cursor: pointer;
 	color:  #ddd92a;
-}
-
-.timeline p{
-	font-size: 18px;
-	padding-bottom: 5px;
-	padding-left: 30px;
 }
 
 /* Dropdown menu is made using CSS and the hover option. */
@@ -434,9 +413,6 @@ display: table;
 .col-t-10 {width: 83.33%;}
 .col-t-11 {width: 91.66%;}
 .col-t-12 {width: 100%;}
-aside{
-	display: none;
-}
   #userHeader h2{
 	  display: inline-block;
   }
@@ -489,12 +465,6 @@ nav{
 		font-size: 21px;
 		width: 50%;
 		left: 25%;
-	}
-	aside{
-		display: none;
-	}
-	.timeline-link{
-		display: none;
 	}
 
 }

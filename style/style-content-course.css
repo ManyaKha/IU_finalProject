@@ -1,0 +1,95 @@
+/* This style sheet is used for styling simple page content used for course pages. */
+
+.button-holder{
+	display: inline-block;
+	padding-bottom: 10px;
+}
+
+#content a {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	background-color: var(--light_purple);
+	border-radius: var(--border_radius);
+	text-align: center;
+	text-decoration: none;
+	float: left;
+	padding: 10px 0;
+	width: 110px;
+	margin-left: 10px;
+	color: var(--dark_blue);
+}
+.activities{
+	display: block;
+}
+.activity {
+	cursor: pointer;
+	border-radius: var(--border_radius);
+	margin-left: 10px;
+	display: block;
+	padding: 5px 10px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.title {
+	display: inline-block;
+	font-weight: normal;
+	color: var(--dark_blue);
+}
+.due-date{
+	display: inline-block;
+	color: darkred;
+	font-style: italic;
+	font-weight: normal;
+	padding-left: 10px;
+}
+
+.activity:hover{
+	background-color: var(--light_purple);
+	font-weight: bold;
+}
+
+.activity:hover .deliver{
+	fill: black;
+}
+.activity:hover .edit{
+	fill: red;
+}
+.deliver {
+	float: right;
+	fill: var(--dark_blue);
+}
+.edit {
+	float: right;
+	fill: darkred;
+	margin-right: 15px;
+}
+
+#content a:hover{
+	color: var(--dark_blue);
+	background-color: var(--light_light_purple);
+	font-weight: bold;
+}
+
+#content h1{
+	font-size: 26px;
+	padding-top: 20px;
+	padding-bottom: 25px;
+}
+#content h2{
+	font-size: 20px;
+	padding-top: 20px;
+	padding-bottom: 10px;
+	padding-left: 60px;
+}
+#content p {
+	color: #2d2a32;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: justify;
+	font-size: 18px;
+	padding-left:70px;
+	padding-bottom: 5px;
+	padding-right: 20px;
+}
+#content {
+	padding-bottom: 40px;
+	padding-right: 40px;
+}
