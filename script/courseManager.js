@@ -50,7 +50,34 @@ const activities = [
     new Activity("Physics I", "P1 Exercises", "22/12/2020"),
     new Activity("Physics I", "P1A Exercises corrected", "14/01/2021"),
     new Activity("Physics I", "Unit II Slides"),
-    new Activity("Calculus", "Induction Slides")
+
+    new Activity("Calculus", "Induction Slides"),
+    new Activity("Calculus", "Module I. functions", "21/01/2021"),
+    new Activity("Calculus", "Exercise week I. Function behaviours", "21/01/2021"),
+
+    new Activity("Programming", "Module I. Introduction to python"),
+    new Activity("Programming", "Module II. Loops and functions", "25/03/2021"),
+    new Activity("Programming", "Module III. Objects and classes", "25/04/2021" ),
+
+    new Activity("User interfaces", "Introduction to HTML", "05/12/2020"),
+    new Activity("User interfaces", "Submission Assignment I"),
+    new Activity("User interfaces", "CSS and JavaScript", "03/01/2021"),
+
+    new Activity("Linear algebra", "Topic I. Matrix algebra"),
+    new Activity("Linear algebra", "Topic II. Resolution of problems", "15/01/2021"),
+    new Activity("Linear algebra", "Topic III. Complex algebra", "20/01/2021"),
+
+    new Activity("Physics II", "Magnetism"),
+    new Activity("Physics II", "Electricity", "09/02/2021"),
+    new Activity("Physics II", "Midterm I. Topics I and II", "14/02/2021"),
+
+    new Activity("Principles of physics", "Black holes"),
+    new Activity("Principles of physics", "Astronomy", "17/03/2021"),
+    new Activity("Principles of physics", "Stars","19/06/2021"),
+
+    new Activity("Advanced physics", "Doppler effect"),
+    new Activity("Advanced physics", "Exam I", "07/12/2020"),
+    new Activity("Advanced physics", "Exam II", "24/12/2020"),
 ];
 
 /**

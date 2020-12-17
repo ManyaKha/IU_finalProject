@@ -293,6 +293,7 @@ function logOut(){
         loggedUser=new User();
         changeContent(loginPage);
     }
+    history.go(0);
 }
 //function to store the data of a new user, the system will ask you to fill all the boxes with the personal data information, once all boxes had been full, the user will have to accept the terms and policies
 function registerUser(){
@@ -302,7 +303,7 @@ function registerUser(){
         return;
     }
     let newUser = new User(document.signup.user.value,document.signup.nia.value,document.signup.password.value,document.signup.fullname.value,document.signup.email.value, document.signup.date.value, document.signup.id.value,document.signup.role.selectedIndex,document.signup.role.selectedIndex >0 ? -1:document.signup.degree.selectedIndex,document.signup.university.value,document.signup.language.value,false,"./images/profilepicture.png",[0,0,0],[0,0,0],[0,0,0],[0,0,0]);
-    document.cookie=newUser.cookie();//sotring the data for the new user in a cookie
+    document.cookie=newUser.cookie();//storing the data for the new user in a cookie
     document.cookie="loggedUser="+newUser.cookie().split("=")[1];
     users.push(newUser);
     loggedUser=newUser;
@@ -361,6 +362,5 @@ $(document).ready(function() {
             if (retrievedUser !== undefined)
                 loggedUser = retrievedUser;
         }
-
     }
 });
