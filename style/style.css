@@ -345,7 +345,7 @@ main{
 }
 #hamburger{
 	float: left;
-	fill: var(--dark_blue);
+	fill: white;
 	padding: 5px;
 	cursor: pointer;
 }
