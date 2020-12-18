@@ -98,8 +98,12 @@ function showCalendar(month, year) { //this function will create a table with di
 }
 //functions to change the color of the important events and the color of the actual day of the month
 function change_colorday(cell){
-    cell.style.backgroundColor="#B9B9B9"
+    cell.style.backgroundColor="#e6e6fa";
+    cell.style.color="#191970";
+    cell.style.borderRadius="10px";
 }
 function change_colorEvent(cell){
-    cell.style.backgroundColor="#191970"
+    cell.style.backgroundColor="#191970";
+    cell.style.color="#e6e6fa"
+    cell.style.borderRadius="10px";
 }
